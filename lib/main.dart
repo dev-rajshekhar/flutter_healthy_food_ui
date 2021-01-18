@@ -82,21 +82,21 @@ class _MyHomePageState extends State<MyHomePage> {
             child: ListView(
               children: [
                 FoodItem(
-                    foodName: "Plate1",
+                    foodName: "French Fries",
                     imageName: 'assets/plate_1.jpg',
                     price: 150),
                 FoodItem(
-                  foodName: "Plate1",
+                  foodName: "Salad",
                   imageName: "assets/plate_2.jpg",
                   price: 40,
                 ),
                 FoodItem(
-                  foodName: "Plate1",
+                  foodName: "Bread",
                   imageName: "assets/plate_3.jpg",
                   price: 60,
                 ),
                 FoodItem(
-                  foodName: "Plate1",
+                  foodName: "Chicken",
                   imageName: "assets/plate_4.jpg",
                   price: 16,
                 )

@@ -15,7 +15,6 @@ class FoodDetails extends StatefulWidget {
 class _FoodDetailsState extends State<FoodDetails> {
   var selectedCard = 'WEIGHT';
 
-
   Widget _buildInfoCard(String cardTitle, String info, String unit) {
     selectCard(cardTitle) {
       setState(() {
@@ -27,20 +26,18 @@ class _FoodDetailsState extends State<FoodDetails> {
           selectCard(cardTitle);
         },
         child: AnimatedContainer(
-            duration: Duration(milliseconds: 500),
+            duration: Duration(milliseconds: 300),
             curve: Curves.easeIn,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10.0),
-              color: cardTitle == selectedCard ? Color(0xFF7A9BEE) : Colors
-                  .white,
+              color:
+                  cardTitle == selectedCard ? Color(0xFF7A9BEE) : Colors.white,
               border: Border.all(
-                  color: cardTitle == selectedCard ?
-                  Colors.transparent :
-                  Colors.grey.withOpacity(0.3),
+                  color: cardTitle == selectedCard
+                      ? Colors.transparent
+                      : Colors.grey.withOpacity(0.3),
                   style: BorderStyle.solid,
-                  width: 0.75
-              ),
-
+                  width: 0.75),
             ),
             height: 100.0,
             width: 100.0,
@@ -54,9 +51,9 @@ class _FoodDetailsState extends State<FoodDetails> {
                         style: TextStyle(
                           fontFamily: 'Montserrat',
                           fontSize: 12.0,
-                          color:
-                          cardTitle == selectedCard ? Colors.white : Colors.grey
-                              .withOpacity(0.7),
+                          color: cardTitle == selectedCard
+                              ? Colors.white
+                              : Colors.grey.withOpacity(0.7),
                         )),
                   ),
                   Padding(
@@ -83,10 +80,7 @@ class _FoodDetailsState extends State<FoodDetails> {
                       ],
                     ),
                   )
-                ]
-            )
-        )
-    );
+                ])));
   }
 
   @override
@@ -143,6 +137,7 @@ class _FoodDetailsState extends State<FoodDetails> {
                       tag: widget.imageName,
                       child: Container(
                           decoration: BoxDecoration(
+                              shape: BoxShape.circle,
                               image: DecorationImage(
                                   image: AssetImage(widget.imageName),
                                   fit: BoxFit.cover)),
@@ -164,11 +159,9 @@ class _FoodDetailsState extends State<FoodDetails> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text(widget.price.toString(),
-                            style: TextStyle(
-                                fontFamily: 'Montserrat',
-                                fontSize: 20.0,
-                                color: Colors.grey)),
+                        Text("\$ ${widget.price.toString()}",
+                            style:
+                                TextStyle(fontSize: 20.0, color: Colors.grey)),
                         Container(height: 25.0, color: Colors.grey, width: 1.0),
                         Container(
                           width: 125.0,
@@ -198,9 +191,7 @@ class _FoodDetailsState extends State<FoodDetails> {
                                 ),
                                 Text('2',
                                     style: TextStyle(
-                                        color: Colors.white,
-                                        fontFamily: 'Montserrat',
-                                        fontSize: 15.0)),
+                                        color: Colors.white, fontSize: 15.0)),
                                 InkWell(
                                   child: Container(
                                     width: 25,
@@ -228,7 +219,7 @@ class _FoodDetailsState extends State<FoodDetails> {
                         child: ListView(
                           scrollDirection: Axis.horizontal,
                           children: <Widget>[
-                            _buildInfoCard ('WEIGHT', '300', 'G'),
+                            _buildInfoCard('WEIGHT', '300', 'G'),
                             SizedBox(width: 10.0),
                             _buildInfoCard('CALORIES', '267', 'CAL'),
                             SizedBox(width: 10.0),
@@ -236,11 +227,9 @@ class _FoodDetailsState extends State<FoodDetails> {
                             SizedBox(width: 10.0),
                             _buildInfoCard('AVAIL', 'NO', 'AV')
                           ],
-                        )
-                    ),
+                        )),
                   ],
                 ),
-
               )
             ],
           )
@@ -248,9 +237,4 @@ class _FoodDetailsState extends State<FoodDetails> {
       ),
     );
   }
-
-
 }
-
-
-

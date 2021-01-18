@@ -15,11 +15,11 @@ class FoodItem extends StatelessWidget {
       padding: EdgeInsets.only(top: 50, left: 60, right: 20),
       child: InkWell(
         onTap: () => {
-
-        Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => FoodDetails(price: price, imageName: imageName, foodName: foodName))),
-
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => FoodDetails(
+                      price: price, imageName: imageName, foodName: foodName))),
         },
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -29,11 +29,22 @@ class FoodItem extends StatelessWidget {
                 children: [
                   Hero(
                     tag: imageName,
-                    child: Image(
-                        image: AssetImage(imageName),
-                        fit: BoxFit.cover,
-                        height: 75.0,
-                        width: 75.0),
+                    child: Container(
+                      height: 80,
+                      width: 80,
+                      decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          boxShadow: [
+                            BoxShadow(
+                                blurRadius: 7,
+                                color: Colors.grey.shade500,
+                                spreadRadius: 5)
+                          ],
+                          image: DecorationImage(
+                            image: AssetImage(imageName),
+                            fit: BoxFit.cover,
+                          )),
+                    ),
                   ),
                   SizedBox(
                     width: 20,
