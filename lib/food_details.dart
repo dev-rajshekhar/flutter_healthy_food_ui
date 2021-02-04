@@ -20,7 +20,11 @@ class _FoodDetailsState extends State<FoodDetails> {
       setState(() {
         selectedCard = cardTitle;
       });
+
+
     }
+
+
     return InkWell(
         onTap: () {
           selectCard(cardTitle);
